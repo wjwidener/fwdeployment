@@ -2,22 +2,20 @@
 provider "azurerm" {
     version = "~> 1.35"
 
-	subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-
-
+    subscription_id = "xxxxxxxx-ssss-ssss-ssss-xxxxxxxxxxxx"
+    client_id       = "xxxxxxxx-aaaa-aaaa-aaaa-xxxxxxxxxxxx"
+    client_secret   = "xxxxxxxx-bbbb-bbbb-bbbb-xxxxxxxxxxxx"
+    tenant_id       = "xxxxxxxx-tttt-tttt-tttt-xxxxxxxxxxxx"
 }
 
 provider "azurerm" {
     version = "~> 1.35"
     alias = "number2"
 
-	subscription_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id       = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret   = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id       = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    subscription_id = "xxxxxxxx-ssss-ssss-ssss-xxxxxxxxxxxx"
+    client_id       = "xxxxxxxx-aaaa-aaaa-aaaa-xxxxxxxxxxxx"
+    client_secret   = "xxxxxxxx-bbbb-bbbb-bbbb-xxxxxxxxxxxx"
+    tenant_id       = "xxxxxxxx-tttt-tttt-tttt-xxxxxxxxxxxx"
 }
 
 # Create a resource group if it does not exist
