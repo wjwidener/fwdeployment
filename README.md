@@ -21,14 +21,15 @@ You will also need to replace the sample CA root provided with one that works fo
 After the terraform script finishing running, you will need to ssh into the FreeBSD machines to now install OpnSense. 
 
 On each firewall, substitute the proper values for your wanip, lanip, etc. then run: 
-# pkg install -y ca_root_nss
-# fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/opnsense-bootstrap.sh
-# fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/config.xml
-# fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/updateips.sh
-# sh ./opnsense-bootstrap.sh -y
-# sh ./updateips.sh <wanip> <wansubnet-cidr> <lanip> <lansubnet-cidr> <langw-ip> <wangw-ip>
-# cp config.xml /usr/local/etc/config.xml
-# reboot
+
+  pkg install -y ca_root_nss
+  fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/opnsense-bootstrap.sh
+  fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/config.xml
+  fetch https://raw.githubusercontent.com/wjwidener/update/master/bootstrap/updateips.sh
+  sh ./opnsense-bootstrap.sh -y
+  sh ./updateips.sh <wanip> <wansubnet-cidr> <lanip> <lansubnet-cidr> <langw-ip> <wangw-ip>
+  cp config.xml /usr/local/etc/config.xml
+  reboot
 
 Then install FreeIPA/RedHAt IdM with Radius support and modify your Azure VPN to use Radius. 
 <instructions to do so coming soon...>
