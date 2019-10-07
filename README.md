@@ -32,4 +32,6 @@ On each firewall, substitute the proper values for your wanip, lanip, etc. then 
     # reboot
 
 Then install FreeIPA/RedHAt IdM with Radius support and modify your Azure VPN to use Radius. 
-<instructions to do so coming soon...>
+..instructions to do so coming soon..
+
+
