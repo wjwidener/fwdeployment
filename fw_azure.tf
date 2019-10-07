@@ -662,16 +662,16 @@ resource "azurerm_virtual_machine" "myterraformvm4" {
 #  provider            = "azurerm.number2"
 #}
 
-#data "azurerm_virtual_network" "myterraformvnet2" {
+#data "azurerm_virtual_network" "myterraformvnet1" {
 #  name                = "${azurerm_virtual_network.myterraformnetwork.name}"
 #  resource_group_name = "${azurerm_resource_group.myterraformgroup.name}"
 #}
 
 #resource "azurerm_virtual_network_peering" "myvnet2-to-myvnet1" {
 #  name                         = "myvnet2-myvnet1-peer"
-#  resource_group_name          = "${data.azurerm_virtual_network.securityvnet.resource_group_name}"
-#  virtual_network_name         = "${data.azurerm_virtual_network.securityvnet.name}"
-#  remote_virtual_network_id    = "${data.azurerm_virtual_network.amerenvnet.id}"
+#  resource_group_name          = "${data.azurerm_virtual_network.myterraformvnet2.resource_group_name}"
+#  virtual_network_name         = "${data.azurerm_virtual_network.myterraformvnet2.name}"
+#  remote_virtual_network_id    = "${data.azurerm_virtual_network.myterraformvnet1.id}"
 #  allow_virtual_network_access = true
 #  allow_forwarded_traffic      = true
 #  allow_gateway_transit        = true
@@ -680,9 +680,9 @@ resource "azurerm_virtual_machine" "myterraformvm4" {
 
 #resource "azurerm_virtual_network_peering" "myvnet1-to-myvnet2" {
 #  name                         = "myvnet1-myvnet2-peer"
-#  resource_group_name          = "${data.azurerm_virtual_network.amerenvnet.resource_group_name}"
-#  virtual_network_name         = "${data.azurerm_virtual_network.amerenvnet.name}"
-#  remote_virtual_network_id    = "${data.azurerm_virtual_network.securityvnet.id}"
+#  resource_group_name          = "${data.azurerm_virtual_network.myterraformvnet1.resource_group_name}"
+#  virtual_network_name         = "${data.azurerm_virtual_network.myterraformvnet1.name}"
+#  remote_virtual_network_id    = "${data.azurerm_virtual_network.myterraformvnet2.id}"
 #  allow_virtual_network_access = true
 #  allow_forwarded_traffic      = true
 #  use_remote_gateways          = true
