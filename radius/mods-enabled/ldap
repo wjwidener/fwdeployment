@@ -155,7 +155,7 @@ ldap {
         user {
                 #  Where to start searching in the tree for users
                 #base_dn = "${..base_dn}"
-				base_dn = "cn=users,cn=accounts,dc=roadrunner,dc=acme,dc=com"
+                base_dn = "cn=users,cn=accounts,dc=roadrunner,dc=acme,dc=com"
 
                 #  Filter for user objects, should be specific enough
                 #  to identify a single user object.
@@ -164,7 +164,7 @@ ldap {
                 #  "samaccountname=" instead of "uid="
                 #
                 #filter = "(uid=%{%{Stripped-User-Name}:-%{User-Name}})"
-				filter = "(uid=%{%{Stripped-User-Name}:-%{User-Name}})"
+                filter = "(uid=%{%{Stripped-User-Name}:-%{User-Name}})"
 
                 #  SASL parameters to use for user binds
                 #
