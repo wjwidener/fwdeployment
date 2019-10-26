@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#create the user and add them to the vpn group
+echo $3 | ipa user-add $1 --first=$5 --last=$6 --homedir=/home/$1 --shell=/bin/bash --password
+if [ "$8" == "vpn" ]; then
+        ipa group-add-member vpn --users=$1
+elif [ "$8" == "vpnsvc" ]; then
+        ipa group-add-member vpn --users=$1
+        ipa group-add-member svc_accounts --users=$1
+elif [ "$8" == "vpnsvcadmin" ]; then
+        ipa group-add-member vpn --users=$1
+        ipa group-add-member svc_accounts --users=$1
+        ipa group-add-member admins --users=$1
+else
+        echo "The account is not in the vpn, svc_accounts, or admins group"
+fi
+
+./mkuser $1 $2 $3 $4
+
+# reset to admin user
+echo $7 | kinit admin
