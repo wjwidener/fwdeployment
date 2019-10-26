@@ -1,0 +1,24 @@
+#!/usr/bin/expect -f
+ 
+set uname [lindex $argv 0]
+set dname [lindex $argv 1]
+append fullname $uname "@" 
+append fulldname $fullname $dname
+set pword1 [lindex $argv 2]
+set pword2 [lindex $argv 3]
+set args [lrange $argv 0 end]
+
+set timeout -1
+
+spawn kinit $uname 
+ 
+expect "Password for $fulldname:"
+send -- "$pword1\r"
+ 
+expect "Enter new password:"
+send -- "$pword2\r"
+ 
+expect "Enter it again:"
+send -- "$pword2\r"
+ 
+expect eof
