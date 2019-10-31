@@ -1,6 +1,12 @@
 #!/bin/bash
 
-#create the user and add them to the vpn group
+if [ "$1" == "--help" ]; then
+  echo "Usage: `basename $0` <user-to-add> <DOMAIN> <initial-tmp-user-password> <user-password> <User First Name> <User Last Name> <
+Admin Password> <group to add user one of: vpn|vpnsvc|vpnsvcadmin|vpnsvcqa|vpnsvcdevadmin"
+  exit 0
+fi
+
+#create a user and add them to the right groups
 echo $3 | ipa user-add $1 --first=$5 --last=$6 --homedir=/home/$1 --shell=/bin/bash --password
 if [ "$8" == "vpn" ]; then
         ipa group-add-member vpn --users=$1
