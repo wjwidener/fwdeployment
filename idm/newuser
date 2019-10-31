@@ -7,6 +7,14 @@ if [ "$8" == "vpn" ]; then
 elif [ "$8" == "vpnsvc" ]; then
         ipa group-add-member vpn --users=$1
         ipa group-add-member svc_accounts --users=$1
+elif [ "$8" == "vpnsvcdevqa" ]; then
+        ipa group-add-member vpn --users=$1
+        ipa group-add-member svc_accounts --users=$1
+        ipa group-add-member devqa --users=$1
+elif [ "$8" == "vpnsvcdevadmin" ]; then
+        ipa group-add-member vpn --users=$1
+        ipa group-add-member svc_accounts --users=$1
+        ipa group-add-member devadmin --users=$1
 elif [ "$8" == "vpnsvcadmin" ]; then
         ipa group-add-member vpn --users=$1
         ipa group-add-member svc_accounts --users=$1
