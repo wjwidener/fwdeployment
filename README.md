@@ -18,7 +18,7 @@ The current values for the network assume 10.252.0.0/24.
 You will also need to replace the sample CA root provided with one that works for you. 
 ( This is temporary as we will be using Radius to manage authentication for the VPN(s). 
 
-After the terraform script finishing running, you will need to ssh into the FreeBSD machines to now install OpnSense. 
+After the terraform script finishes running, you will need to ssh into the FreeBSD machine to now install OpnSense. 
 
 On each firewall, substitute the proper values for your wanip, lanip, etc. then run: 
 
